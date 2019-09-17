@@ -8,6 +8,7 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
 button {
   font-family: "Poppins", sans-serif;
   border-radius: 4px;
@@ -31,13 +32,15 @@ header {
   flex: 1;
   align-items: center;
 }
+
 .logo {
   font-weight: 400;
   font-size: 16px;
-  letter-spacing: 6px;
+  /* letter-spacing: 1px; */
   margin: 6px;
   color: #5f5f79;
 }
+
 .logo-container img {
   width: 20px;
 }
@@ -59,18 +62,21 @@ nav {
   justify-content: space-around;
   list-style: none;
 }
+
 .nav-link {
   color: #5f5f79;
   font-size: 16px;
   text-decoration: none;
 }
+
 .presentation {
   display: flex;
   width: 90%;
   margin: auto;
-  min-height: 80vh;
+  min-height: 90vh;
   align-items: center;
 }
+
 .introduction {
   flex: 1;
 }
@@ -102,6 +108,7 @@ nav {
   cursor: pointer;
   font-size: 16px;
 }
+
 .cta-add {
   background: #7fa1e5;
   width: 150px;
@@ -115,22 +122,42 @@ nav {
 
 .cover {
   flex: 1;
+  height: 90vh;
+  vertical-align: center;
 }
 
 .cover img {
-  height: 80vh;
-  filter: drop-shadow(0px 5px 3px grey); /* ADDING SHADOW UNDER PNG! */
+  filter: drop-shadow(0px 5px 3px grey);
+  /* ADDING SHADOW UNDER PNG! */
   margin: 0px 0px 0px 30px;
+  animation: drop 1.5s ease;
+}
+
+#phone {
+  position: absolute;
+  top: 30vh;
+  height: 60%;
+  z-index: 2;
+}
+
+#tablet {
+  filter: blur(2px);
+  position: absolute;
+  top: 10vh;
+  height: 90%;
+  z-index: 1;
 }
 
 .big {
   position: absolute;
   top: -110px;
   right: -200px;
-  z-index: -1; /* MOVES THE IMAGE TO THE BACK LIKE A LAYER! */
+  z-index: -1;
+  /* MOVES THE IMAGE TO THE BACK LIKE A LAYER! */
   width: 60vw;
   opacity: 0.4;
 }
+
 .mid {
   position: absolute;
   top: 30%;
@@ -147,4 +174,64 @@ nav {
   z-index: -1;
   height: 30%;
   opacity: 0.6;
+}
+
+@keyframes drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .presentation {
+    flex-direction: column;
+    clear: left;
+  }
+
+  .introduction {
+    margin-top: 5vh;
+  }
+
+  .intro-text h1 {
+    font-size: 30px;
+    text-align: сenter;
+  }
+
+  .intro-text p {
+    font-size: 18px;
+  }
+
+  #heading {
+    text-align: center;
+  }
+  .cover {
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  #phone {
+    position: relative;
+    height: 40%;
+    z-index: 2;
+    align-items: center;
+    float: left;
+    top: 10vh;
+  }
+
+  #tablet {
+    position: relative;
+    height: 60%;
+    z-index: 1;
+  }
+}
+
+@media screen and (max-width: 360px) {
 }
